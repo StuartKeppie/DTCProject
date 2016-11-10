@@ -25,7 +25,7 @@ def displayplots(animal, food):
 	plot.subplot(212)
 	plot.imshow(food, interpolation = "nearest", cmap = "Blues")
 	plot.colorbar()
-	plot.clim(0,100)
+	plot.clim(0,maxfood)
 	plot.title('Food')
 	plot.subplot(211)
 	plot.imshow(animal, interpolation = "nearest", cmap = "Reds")
