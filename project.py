@@ -25,6 +25,7 @@ def displayplots(animal, food):
 	plot.subplot(212)
 	plot.imshow(food, interpolation = "nearest", cmap = "Blues")
 	plot.colorbar()
+	plot.clim(0,100)
 	plot.title('Food')
 	plot.subplot(211)
 	plot.imshow(animal, interpolation = "nearest", cmap = "Reds")
@@ -41,7 +42,7 @@ gridRow = 6
 gridColumn = 6
 
 eatrate = 10
-growrate = 10
+growrate = 5
 maxfood = 100
 breedthreshold = 20
 generation = 0
