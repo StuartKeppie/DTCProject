@@ -1,5 +1,4 @@
 #! /usr/bin/python
-import sys
 import numpy as np
 import matplotlib.pyplot as plot
 
@@ -73,7 +72,7 @@ while generation <= finalgeneration:
 			if foodgrid[eachrow, eachcolumn] > maxfood:
 				foodgrid[eachrow, eachcolumn] = maxfood
 			elif foodgrid[eachrow, eachcolumn] <= 0:
-				foodgrid[eachrow, eachcolumn] = 100
+				foodgrid[eachrow, eachcolumn] = maxfood
 	animalcount = 0
 	#create or reset newgrid, a temporary grid that stores surviving and bred animals for the turn
 	newgrid = np.zeros((gridRow,gridColumn), np.int8)
@@ -94,7 +93,7 @@ while generation <= finalgeneration:
 							foodgrid[foodrow, foodcol] = 0
 				if eaten >= breedthreshold:
 					#populate cells straight next to sufficiently fed animal
-					#if statements to stop it being out of range, but quite a dirty way, can it be cleared up?
+					#if statements to stop it being out of range
 					if rows-1 >= 0 and rows-1 < gridRow and cols >= 0 and cols < gridColumn:
 						breedgrid[rows-1,cols] = 1
 					if rows >= 0 and rows < gridRow and cols-1 >= 0 and cols-1 < gridColumn:					
